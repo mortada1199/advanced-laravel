@@ -29,7 +29,10 @@ Route::get('/instructor/dashboard', function () {
     return view('instructor.dashboard');
 })->middleware(['auth','role:instructor'])->name('instructor.dashboard');
 
-Route::resource('/instructor/schedule', ScheduledClassController::class);
+Route::resource('/instructor/schedule', ScheduledClassController::class)
+->only(['index','create','store','destroy'])
+->middleware(['auth','role:instructor']);
+
 
 Route::get('/member/dashboard', function () {
     return view('member.dashboard');
