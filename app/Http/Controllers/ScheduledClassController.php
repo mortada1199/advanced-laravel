@@ -6,7 +6,7 @@ use App\Models\ClassType;
 use App\Models\ScheduledClass;
 use Illuminate\Http\Request;
 
-class ScheduledClassController extends Controller
+class ScheduledClassController   extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class ScheduledClassController extends Controller
 
 
         $scheduledClasses = auth()->user()->scheduledClasses()->upcoming()->oldest('date_time')->get();
-        
+
         return view('instructor.upcoming')->with('scheduledClasses', $scheduledClasses);
        
     }
