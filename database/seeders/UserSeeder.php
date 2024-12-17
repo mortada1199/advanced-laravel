@@ -24,6 +24,11 @@ class UserSeeder extends Seeder
         ]);
 
         User::factory()->create([
+            'name' => 'Shruti',
+            'email' => 'shruti@example.com'
+        ]);
+
+        User::factory()->create([
             'name' => 'mohamed',
             'email' => 'mohamed@example.com',
             'role' => 'instructor',
@@ -39,6 +44,10 @@ class UserSeeder extends Seeder
 
         User::factory()->count(10)->create();
 
-        User::factory()->count(10)->create(['role' => 'instructor']);
+
+
+        User::factory()->count(10)->create([
+            'role' => 'instructor'
+        ]);
     }
 }
